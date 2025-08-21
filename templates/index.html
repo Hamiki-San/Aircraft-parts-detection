@@ -75,7 +75,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Detect an Airplane in an Image</h1>
+        <h1>Detect an Airplane Engine in an Image</h1>
         <form id="uploadForm">
             <input type="file" id="imageFile" name="image" accept="image/*" required>
             <br>
@@ -118,7 +118,7 @@
                     // Update the image source and show it
                     resultImageElement.src = result.processed_image_url;
                     resultImageElement.style.display = 'block';
-                    messageElement.innerText = `Detected ${result.total_detections} airplane(s)!`;
+                    messageElement.innerText = `Detected ${result.total_detections} engine(s)!`;
                     messageElement.style.display = 'block';
                 } else {
                     // Handle server errors

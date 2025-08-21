@@ -5,7 +5,7 @@ import os
 
 # Load your trained YOLO model
 try:
-    model = YOLO('best.pt')
+    model = YOLO('aircraft_engine.pt')
 except Exception as e:
     print(f"Error loading model: {e}")
     model = None
@@ -23,8 +23,14 @@ def detect_aircraft(image_path):
         if frame is None:
             return {"status": "error", "message": "Could not read the image file."}
 
-        results = model.predict(frame, conf=0.8, verbose=False)
+        # IMPORTANT: Lowered the confidence threshold to 0.5 for better detection
+        # This will make the model less strict about its detections.
+        # You can adjust this value based on your model's performance.
+        print("Running detection with a confidence threshold of 0.5...")
+        results = model.predict(frame, conf=0.5, verbose=True) # verbose=True for debugging, confidence adjusment can be made here.
         result = results[0]
+
+        print(f"Raw detections for {image_path}: {result.boxes.xyxy.tolist()}")
         
         detections = []
         for box in result.boxes:
@@ -49,12 +55,18 @@ def detect_aircraft(image_path):
         
         processed_image_url = f"/{output_path.replace(os.path.sep, '/')}"
 
+        # Check if any detections were made and update the total_detections accordingly
+        total_detections = len(detections)
+        if total_detections == 0:
+            print("No detections found. Check your model and confidence threshold.")
+
         return {
             "status": "success",
-            "total_detections": len(detections),
+            "total_detections": total_detections,
             "detections": detections,
             "processed_image_url": processed_image_url
         }
 
     except Exception as e:
+        print(f"An error occurred during detection: {e}")
         return {"status": "error", "message": str(e)}

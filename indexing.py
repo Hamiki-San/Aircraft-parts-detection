@@ -3,7 +3,7 @@ from ultralytics import YOLO
 # 1. Load your .pt file
 # Replace 'best.pt' with the actual path to your model file
 # (e.g., 'yolov8n.pt', 'yolov8s.pt', or '/path/to/your/custom_model/best.pt')
-model = YOLO('best.pt')
+model = YOLO('aircraft_engine.pt')
 
 # 2. Access the 'names' attribute
 # This attribute is a dictionary where keys are class IDs (indices)

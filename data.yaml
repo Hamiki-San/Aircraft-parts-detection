@@ -1,0 +1,10 @@
+# Ultralytics YOLOv8.0 dataset configuration
+# The paths are now relative to the current directory where you run the script.
+
+# Define the paths for your training and validation data relative to the project directory.
+train: train/images
+val: valid/images
+
+# Define the names of your classes.
+names:
+  0: aircraft_engine
