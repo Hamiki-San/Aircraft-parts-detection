@@ -50,7 +50,7 @@ python yolov8.py
 - This script is based on Ultralytics' YOLOv5 repository.
 - Special thanks to the Ultralytics team for their excellent work on YOLOv8 and other object detection models.
 
-THE PART BELOW IS FOR OBJECT DETECTION USING IMAGE BY DRAG AND DROP WITH PROPER UI.
+## THE PART BELOW IS FOR OBJECT DETECTION USING IMAGE BY DRAG AND DROP WITH PROPER UI.
 
 1. Run the app1.py module where this module will import detect_aircraft function from airdract_detection_module.py to return image with object detected.
 2. changes to training model should be made in the aircraft_detection_module.py (the `.pt` files). The confidence also can be changes in this module.
