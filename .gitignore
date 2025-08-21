@@ -1,0 +1,10 @@
+# Python-specific files
+__pycache__/
+*.pyc
+venv/
+*.ipynb
+.env
+
+# Ignore uploads and processed images
+uploads/
+static/processed/
