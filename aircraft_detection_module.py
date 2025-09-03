@@ -45,7 +45,7 @@ def detect_aircraft(image_path):
             })
 
         output_image = result.plot()
-        output_dir = 'static/processed'
+        output_dir = 'static/processe'
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
             
