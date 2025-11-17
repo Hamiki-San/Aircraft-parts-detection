@@ -73,4 +73,4 @@ def get_model_info(model_path):
 
 # Example usage:
 # Replace 'abishai_model.pt' with the actual path to your model file
-get_model_info('abishai_model.pt')
+get_model_info('yolo11s.pt')
